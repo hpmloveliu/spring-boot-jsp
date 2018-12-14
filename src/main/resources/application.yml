@@ -1,0 +1,26 @@
+server:
+  port: 8989
+  context-path: /spring-boot-jsp
+  jsp-servlet:  #支持页面热部署的功能需要添加相关的配置
+    init-parameters:
+      development: true
+spring: #修改springboot配置的视图解析器
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  http:
+    encoding: #设置编码格式
+      charset: utf-8
+      force: true #设置为true，表示请求和响应的格式均为utf-8
+  datasource: #配置数据源连接相关参数
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: hr
+    password: hr
+    driver-class-name: oracle.jdbc.OracleDriver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis:
+  type-aliases-package: com.baizhi.entity #起别名
