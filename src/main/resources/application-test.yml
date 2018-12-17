@@ -1,0 +1,7 @@
+spring: #配置文件的切分
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: hr
+    password: hr
+    driver-class-name: oracle.jdbc.OracleDriver
